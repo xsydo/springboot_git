@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>xsy</module>
+        <module>xsy_pms</module>
         <module>whl_voting_system</module>
         <module>ljf_music_system</module>
         <module>hrs_music_system</module>
