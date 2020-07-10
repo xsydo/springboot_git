@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>人力资源管理系统</title>
+    <link rel="stylesheet" rev="stylesheet" href="/css/style.css " type="text/css" media="all" />
+    <script type="text/javascript" src="/js/typem.js"></script>
+    <script type="text/javascript" src="/js/js.js"></script>
+    <script charset="UTF-8" language="javascript" type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+
+    <style type="text/css">
+        <!--
+        .atten {font-size:12px;font-weight:normal;color:#F00;}
+        -->
+    </style>
+</head>
+<body class="ContentBody">
+<div class="MainDiv">
+    <table width="99%" border="0" cellpadding="0" cellspacing="0" class="CContent">
+        <tr>
+            <th class="tablestyle_title" >奖惩信息详情</th>
+        </tr>
+        <tr>
+            <td class="CPanel">
+                <table border="0" cellpadding="0" cellspacing="0" style="width:80%" align="center">
+                    <tr>
+                        <td width="100%">
+                            <fieldset style="height:100%;">
+                                <legend>奖惩信息详情</legend>
+                                <table border="0" cellpadding="8" cellspacing="1" style="width:100%">
+                                    <tr>
+                                        <td nowrap align="right" width="11%">奖惩名称：</td>
+                                        <td width="89%" th:text="${institution.name}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td nowrap align="right" width="11%">奖惩原因：</td>
+                                        <td th:text="${institution.reason}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="11%" nowrap align="right">奖惩说明：</td>
+                                        <td th:text="${institution.explains}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="22" colspan="2" align="center" >&nbsp;
+                                            <a th:id="'/institution/update?id='+${institution.id}" onclick="fun()">修改</a>
+                                            <a id="/institution/getList" onclick="fun()">返回</a></td>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>

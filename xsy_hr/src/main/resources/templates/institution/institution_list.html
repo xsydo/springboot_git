@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>人力资源管理系统</title>
+    <style type="text/css">
+        <!--
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+
+        .tabfont01 {
+            font-family: "宋体";
+            font-size: 9px;
+            color: #555555;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .font051 {
+            font-family: "宋体";
+            font-size: 12px;
+            color: #333333;
+            text-decoration: none;
+            line-height: 20px;
+        }
+
+        .font201 {
+            font-family: "宋体";
+            font-size: 12px;
+            color: #FF0000;
+            text-decoration: none;
+        }
+
+        .button {
+            font-family: "宋体";
+            font-size: 14px;
+            height: 37px;
+        }
+
+        html {
+            overflow-x: auto;
+            overflow-y: auto;
+            border: 0;
+        }
+
+        -->
+    </style>
+    <link href="/css/css.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/style.css" rel="stylesheet" type="text/css"/>
+    <script charset="UTF-8" language="javascript" type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script charset="UTF-8" language="javascript" type="text/javascript" src="/js/js.js"></script>
+</head>
+
+<body>
+<input type="hidden" id="hint" th:value="${hint}"/>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+    <tr>
+        <td height="30">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td height="62" background="/images/nav04.gif">&nbsp;</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table id="subtree1" style="DISPLAY: table" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td height="20"><span class="newfont07">奖惩信息查看</span></td>
+                            </tr>
+                            <tr>
+                                <td height="40" class="font42">
+                                    <table width="100%" border="0" cellpadding="4" cellspacing="1" bgcolor="#464646"
+                                           class="newfont03">
+                                        <tr class="CTitle">
+                                            <td height="22" colspan="8" align="center" style="font-size:16px">奖惩信息列表
+                                            </td>
+                                        </tr>
+                                        <tr bgcolor="#EEEEEE">
+                                            <td height="22" align="center">奖惩名称</td>
+                                            <td height="22" align="center">奖惩原因</td>
+                                            <td height="22" align="center">执行操作</td>
+                                        </tr>
+
+                                        <tr bgcolor="#FFFFFF" th:if="${#lists.isEmpty(institutionList)}">
+                                            <td height="22" colspan="3" align="center">对不起，没有添加奖惩信息！！！</td>
+                                        </tr>
+                                        <tr bgcolor="#FFFFFF" th:each="i : ${institutionList}">
+                                            <td height="22" align="center" th:text="${i.name}"></td>
+                                            <td height="22" align="center" th:text="${i.reason}"></td>
+                                            <td height="22" align="center">
+                                                <a th:id="'/institution/detail?id='+${i.id}" onclick="fun()">详细</a>&nbsp;&nbsp;&nbsp;
+                                                <a th:id="'/institution/delete?id='+${i.id}" onclick="fun()">删除</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+<script>
+    if($("#hint").attr("value")){
+        alert("success");
+    }
+</script>
+</html>
